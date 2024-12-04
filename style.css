@@ -1,0 +1,355 @@
+/*Start Variables*/
+:root{
+    font-size: 16px;
+    --primary-color: rgb(255, 255, 255);
+    --text-color: rgb(119, 75, 17);
+    --highlight-color: #4e114e;
+    --cards-text-color: #4e114e;
+    --cards-color: rgb(236, 235, 189);
+    --logo-color: rgb(230, 200, 200);
+    ;
+}
+/*end Variables*/
+
+/*start global rules*/
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins" , sans-serif;
+    line-height: 1.5;
+    background-color: var(--primary-color, blue);
+    color: var(--text-color, black);
+
+
+}
+/*end global rules*/
+
+/*start header*/
+.header {
+    background: var(--highlight-color, black);
+    color: var(--text-color);
+    padding: 1rem 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 2.16rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--logo-color);
+}
+
+.img-logo{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 5rem;
+    width: 10rem;
+}
+
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+    background-color: var(--highlight-color);
+    flex-wrap: wrap;
+}
+
+
+.nav-list li {
+    float: left;
+    font-size: 2rem;
+    transition: all 0.12s;
+}
+
+.nav-list li a {
+    
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+
+}
+.nav-list li:active {
+    scale: 0.9;
+    
+
+}
+
+.nav-list a:hover {
+    color: #f4a261;
+}
+
+
+.nav-list li a:hover:not(.active) {
+    background-color: #1c9230;
+}
+
+.active {
+    background-color: #63bf9d;
+}
+.nav-list li:nth-child(5){
+    float: right;
+}
+
+.hamburger {
+    display: none;
+    position: relative;
+}
+
+.dropdown-content{
+    position: absolute;
+    right: 0.5rem;
+}
+
+/* Media Queries header */
+@media (max-width: 768px) {
+
+    .dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+    .hamburger {
+        display: block;
+    }
+    .nav {
+        display: none;
+    }
+    .logo {
+        font-size: 1.5rem;
+    } 
+
+    .img-logo{
+        display: none;
+    }
+
+
+}
+
+
+
+/*  Media Queries header */
+@media (min-width: 769px) and (max-width: 1050px) {
+
+.dropdown{
+display: none;
+}
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-list li {
+        scale: 1;
+        font-size: 1.2rem;
+    }
+
+
+    .logo {
+        font-size: 1.5rem;
+    } 
+
+    .img-logo{
+        display: none;
+    }
+
+
+}
+/*  Media Queries header */
+
+
+
+
+
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+/*end header*/
+
+
+/* start Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-image: linear-gradient(to right, rgb(49 127 103), rgb(242 227 227));
+    /*background: linear-gradient(to right, #0077b6, #0096c7);*/ /*other way to change background color of hero section*/
+    animation: mymove 5s infinite;
+    color: #fff;
+    
+}
+
+@keyframes mymove {
+    from {background-image: linear-gradient(to right, rgb(49 127 103), rgb(242 227 227));}
+    to {background-image: linear-gradient(to right, rgb(27, 72, 59), rgb(79, 33, 33));}
+  }
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: var(--cards-text-color);
+    text-decoration: none;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.hero .btn a{
+    text-decoration: none;
+}
+
+
+
+.hero .btn:hover {
+    color: #f4a261;
+    background-color: #1c9230;
+
+}
+
+.hero .btn:active {
+    scale: 0.9;
+}
+
+/* end Hero Section */
+
+/* star features Section */
+.features {
+    padding: 2rem 1rem;
+}
+.features .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
+}
+.feature-card {
+    text-align: center;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: scale(1.06);
+}
+
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* end features Section */
+
+/* start courses Section */
+.courses {
+    background: #fff;
+    padding: 2rem 1rem;
+}
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.course-card {
+    padding: 1rem;
+    background: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+.course-card:hover {
+    transform: scale(1.06);
+}
+
+/* end courses Section */
+
+
+/* start testimonials  Section */
+.testimonials {
+    background: #f4f4f9;
+    padding: 2rem 1rem;
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.testimonial-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* end testimonials  Section */
+
+
+/* start footer Section*/
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--highlight-color);
+    color: #fff;
+}
+/* end footer Section*/
+
